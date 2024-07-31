@@ -1,0 +1,11 @@
+div {
+    background-color: grey;
+    border-radius: 5px;
+    text-align: center;
+    padding: 2em;
+}
+
+input,
+button {
+    padding: 0.5em;
+}
