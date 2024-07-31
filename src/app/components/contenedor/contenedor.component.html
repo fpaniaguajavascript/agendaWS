@@ -1,3 +1,4 @@
 <div id="contenedor">
-    <app-tarea *ngFor="let task of gestorTareasWeb.tareas" [tarea]=task></app-tarea>
+    <input id="filtro" type="text" placeholder="Filtro" [(ngModel)]="filtro" (keyup)="buscar()">
+    <app-tarea *ngFor="let task of tareasFiltradas" [tarea]=task></app-tarea>
 </div>

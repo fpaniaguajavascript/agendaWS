@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Tarea } from '../interfaces/tarea';
-import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -11,17 +11,17 @@ export class GestorTareasWebService {
       'Content-Type': 'application/json',
     })
   };
-  static URL: string = "https://test1prueba.free.beeceptor.com";
+  static URL: string = "https://test2prueba.free.beeceptor.com";
   static PATH = "/todos";
 
   tareas: Tarea[] = [];
   constructor(private clienteHttp: HttpClient) {
-    console.log("Constructor del servicio");
-    this.clienteHttp.get<Tarea[]>(`${GestorTareasWebService.URL}${GestorTareasWebService.PATH}`).forEach(data => {
-      data.forEach(tarea => {
-        this.tareas.push(tarea);
-      });
-    })
+    this.clienteHttp.get<Tarea[]>(`${GestorTareasWebService.URL}${GestorTareasWebService.PATH}`)
+      .forEach(data => {
+        data.forEach(tarea => {
+          this.tareas.push(tarea);
+        });
+      })
   }
 
 
