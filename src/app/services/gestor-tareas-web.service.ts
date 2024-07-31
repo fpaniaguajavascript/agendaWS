@@ -26,6 +26,8 @@ export class GestorTareasWebService {
 
 
   agregar(tarea: Tarea): void {
+    this.tareas.push(tarea);
+    /*
     const body = {};
     const parametros = new HttpParams()
       .append('id', tarea.id)
@@ -49,5 +51,6 @@ export class GestorTareasWebService {
           console.log("Complete");
         }
       });
+      */
   }
 }
